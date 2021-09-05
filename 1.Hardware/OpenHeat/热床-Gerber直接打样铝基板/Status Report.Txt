@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [OpenHeat.PrjPCB]
+   Generated File[HotBed-24V.TXT]
+   Generated File[HotBed-24V.LDP]
+   Generated File[HotBed-24V.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 11:31:41 On ÷‹»’ 09-05

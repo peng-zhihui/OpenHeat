@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [OpenHeat.PrjPCB]
+   Generated File[OpenHeat-RoundHoles.TXT]
+   Generated File[OpenHeat-SlotHoles.TXT]
+   Generated File[OpenHeat.LDP]
+   Generated File[OpenHeat.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:30:10 On ÷‹»’ 09-05

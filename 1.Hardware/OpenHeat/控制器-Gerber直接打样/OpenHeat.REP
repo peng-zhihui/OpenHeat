@@ -1,0 +1,471 @@
+*************************************************************
+FileName = OpenHeat.GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical 15
+      File : OpenHeat.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D104
+    D110
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 14
+      File : OpenHeat.GM14
+
+    Adding Layer      : Mechanical 14
+
+
+Used DCodes :
+    D111
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : OpenHeat.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D110
+    D111
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 12
+      File : OpenHeat.GM12
+
+    Adding Layer      : Mechanical 12
+
+
+Used DCodes :
+    D104
+    D109
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 10
+      File : OpenHeat.GM10
+
+    Adding Layer      : Mechanical 10
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : OpenHeat.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D10
+    D108
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : OpenHeat.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : OpenHeat.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D25
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : OpenHeat.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D33
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D99
+    D100
+    D101
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : OpenHeat.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D18
+    D19
+    D20
+    D21
+    D22
+    D51
+    D55
+    D64
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : OpenHeat.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : OpenHeat.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : OpenHeat.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : OpenHeat.GPT
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D26
+    D27
+    D28
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : OpenHeat.GPB
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D26
+    D27
+    D28
+    D29
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+*************************************************************
+
+*************************************************************
+Generating : Bottom4
+      File : OpenHeat.GBL
+
+    Adding Layer      : Bottom4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Gnd3
+      File : OpenHeat.G2
+
+    Adding Layer      : Gnd3
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D26
+    D27
+    D28
+    D30
+    D31
+*************************************************************
+
+*************************************************************
+Generating : Signal2
+      File : OpenHeat.G1
+
+    Adding Layer      : Signal2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D23
+    D25
+    D26
+    D27
+    D28
+    D30
+    D31
+*************************************************************
+
+*************************************************************
+Generating : Top1
+      File : OpenHeat.GTL
+
+    Adding Layer      : Top1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D12
+    D13
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : OpenHeat.GD1
+
+    Adding Drill Pair : Top1-Bottom4
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D10
+    D24
+    D111
+    D112
+    D113
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : OpenHeat.GG1
+
+    Adding Drill Pair : Top1-Bottom4
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D111
+*************************************************************
+
