@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: OpenHeat.PcbDoc   周日 09-05  11:30:10
+NCDrill File Report For: OpenHeat.PcbDoc   周日 09-12  12:54:30
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top1 to Bottom4
@@ -8,13 +8,13 @@ ASCII SlotHoles File : OpenHeat-SlotHoles.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      10mil (0.254mm)                                           Round             220       PTH        14.04inch (356.53mm)
+T1      10mil (0.254mm)                                           Round             221       PTH        14.02inch (356.15mm)
 T2      20mil (0.5mm)                                             Round             75        PTH        6.10inch (155.01mm)
 T3      24mil (0.6mm)                                             Slot              4         PTH        1.47inch (37.27mm)
 T4      26mil (0.65mm)                                            Round             2         PTH        0.23inch (5.78mm)
 T5      63mil (1.6mm)                                             Round             2         PTH        0.24inch (6.00mm)
 T6      118mil (3mm)                                              Round             4         PTH        4.36inch (110.62mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              307
+Totals                                                                              308
 
 Total Processing Time (hh:mm:ss) : 00:00:00
