@@ -2,13 +2,13 @@
 
 > 用于PCB回流焊的实用加热台，比较炫酷，可能目前市面上 **颜值最高** & **功能最强** 的加热台。
 
-**参数：**硬件方面基于`ESP32PICO-D4`芯片，输入电源`24V/10A`，最大功率200W，加热温度最高300℃；带蓝牙功能，***后续有空的话我会开发手机APP用于设置升温曲线***。
+**参数：** 硬件方面基于`ESP32PICO-D4`芯片，输入电源`24V/10A`，最大功率200W，加热温度最高300℃；带蓝牙功能，***后续有空的话我会开发手机APP用于设置升温曲线*** 。
 
 ![](3.Docs/1.Images/3.jpg)
 
-* 本项目参考了**[createskyblue](https://gitee.com/createskyblue) / [OpenT12](https://gitee.com/createskyblue/OpenT12)**开源T12电烙铁项目的固件，感谢这位同学设计的优秀交互动画体验，UI设计深得我心哈哈~
+* 本项目参考了 [createskyblue](https://gitee.com/createskyblue) / [OpenT12](https://gitee.com/createskyblue/OpenT12)开源T12电烙铁项目的固件，感谢这位同学设计的优秀交互动画体验，UI设计深得我心哈哈~
 
-* 另外铝基板热床的设计采用了[MRobot-Origin](https://github.com/MRobot-Origin)/**[GS_Hbed](https://github.com/MRobot-Origin/GS_Hbed)**同学的分型曲线设计，非常有创意~
+* 另外铝基板热床的设计采用了[MRobot-Origin](https://github.com/MRobot-Origin)/ [GS_Hbed](https://github.com/MRobot-Origin/GS_Hbed)同学的分型曲线设计，非常有创意~
 
 ## 使用说明
 
