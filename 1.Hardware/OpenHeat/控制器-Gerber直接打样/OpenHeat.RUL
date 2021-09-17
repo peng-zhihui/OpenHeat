@@ -1,4 +1,4 @@
-DRC Rules Export File for PCB: I:\onWorking\_Private\OpenHeat-dev\1.Hardware\OpenHeat\OpenHeat.PcbDoc
+DRC Rules Export File for PCB: I:\onWorking\OpenHeat\1.Hardware\OpenHeat\OpenHeat.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=3.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=4.00
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=4.00

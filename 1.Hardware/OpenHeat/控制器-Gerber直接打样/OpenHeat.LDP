@@ -1,3 +1,3 @@
-Layer Pairs Export File for PCB: I:\onWorking\_Private\OpenHeat-dev\1.Hardware\OpenHeat\OpenHeat.PcbDoc
+Layer Pairs Export File for PCB: I:\onWorking\OpenHeat\1.Hardware\OpenHeat\OpenHeat.PcbDoc
 LayersSetName=Top_Bot_Thru_Holes|DrillFile=openheat-roundholes.txt|DrillLayers=gtl,g1,g2,gbl
 LayersSetName=Top_Bot_Slot_Holes|DrillFile=openheat-slotholes.txt|DrillLayers=gtl,g1,g2,gbl
