@@ -4,6 +4,14 @@
 
 **参数：** 硬件方面基于`ESP32PICO-D4`芯片，输入电源`24V/10A`，最大功率200W，加热温度最高300℃；带蓝牙功能，***后续有空的话我会开发手机APP用于设置升温曲线*** 。
 
+## 21-9-17 修复说明：
+
+![](3.Docs/1.Images/BUG.png)
+
+---
+
+## 关于本项目
+
 ![](3.Docs/1.Images/3.jpg)
 
 * 本项目参考了 [createskyblue](https://gitee.com/createskyblue) / [OpenT12](https://gitee.com/createskyblue/OpenT12)开源T12电烙铁项目的固件，感谢这位同学设计的优秀交互动画体验，UI设计深得我心哈哈~
