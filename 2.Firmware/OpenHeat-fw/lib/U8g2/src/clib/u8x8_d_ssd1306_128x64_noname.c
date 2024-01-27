@@ -303,8 +303,8 @@ static const u8x8_display_info_t u8x8_ssd1306_128x64_noname_display_info =
   /* write_pulse_width_ns = */ 150,	/* SSD1306: cycle time is 300ns, so use 300/2 = 150 */
   /* tile_width = */ 16,
   /* tile_hight = */ 8,
-  /* default_x_offset = */ 2,
-  /* flipmode_x_offset = */ 2,
+  /* default_x_offset = */ 0,
+  /* flipmode_x_offset = */ 0,
   /* pixel_width = */ 128,
   /* pixel_height = */ 64
 };
