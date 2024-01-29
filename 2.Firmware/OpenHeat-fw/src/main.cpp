@@ -7,36 +7,37 @@ BluetoothSerial SerialBT;
 #endif
 
 OneButton RButton(BUTTON_PIN, true);
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C Disp(U8G2_R0, /* reset=*/U8X8_PIN_NONE, /* clock=*/22, /* data=*/21);
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C Disp(U8G2_R0, /* reset=*/ U8X8_PIN_NONE, /* clock=*/ 22, /* data=*/21);
 PID MyPID(&TipTemperature, &PID_Output, &PID_Setpoint, aggKp, aggKi, aggKd, DIRECT);
 /////////////////////////////////////////////////////////////////
 
-char *TipName = "文件系统错误：请上报";
+char* TipName = "文件系统错误：请上报";
 
-float BootTemp = 200; // 开机温度          (°C)
-float SleepTemp = 80; // 休眠温度          (°C)
-float BoostTemp = 50; // 爆发模式升温幅度   (°C)
+float BootTemp = 200;      //开机温度          (°C)
+float SleepTemp = 80;     //休眠温度          (°C)
+float BoostTemp = 50;      //爆发模式升温幅度   (°C)
 
-float ShutdownTime = 0;         // 关机提醒              (分)
-float SleepTime = 10;           // 休眠触发时间          (分)
-float ScreenProtectorTime = 60; // 屏保在休眠后的触发时间(秒)
-float BoostTime = 60;           // 爆发模式持续时间      (秒)
+float ShutdownTime = 0;      //关机提醒              (分)
+float SleepTime = 10;      //休眠触发时间          (分)
+float ScreenProtectorTime = 60;     //屏保在休眠后的触发时间(秒)
+float BoostTime = 60;     //爆发模式持续时间      (秒)
+
 
 bool SYS_Ready = false;
-// 烙铁头事件
+//烙铁头事件
 bool TipInstallEvent = true;
 bool TipCallSleepEvent = false;
-// 到温提示音播放完成
+//到温提示音播放完成
 bool TempToneFlag = false;
-// 休眠后屏保延迟显示标志
+//休眠后屏保延迟显示标志
 bool SleepScreenProtectFlag = false;
-// 温控系统状态
+//温控系统状态
 bool ERROREvent = false;
 bool ShutdownEvent = false;
 bool SleepEvent = false;
 bool BoostEvent = false;
 bool UnderVoltageEvent = false;
-// PWM控制状态
+//PWM控制状态
 bool PWM_WORKY = false;
 
 uint8_t PIDMode = true;
@@ -59,10 +60,10 @@ uint8_t MenuListMode = false;
 
 float ADC_PID_Cycle = 100;
 
-// 面板状态条
+//面板状态条
 uint8_t TempCTRL_Status = TEMP_STATUS_OFF;
-uint8_t *C_table[] = {c1, c2, c3, Lightning, c5, c6, c7};
-char *TempCTRL_Status_Mes[] = {
+uint8_t* C_table[] = {c1, c2, c3, Lightning, c5, c6, c7};
+char* TempCTRL_Status_Mes[] = {
     "错误",
     "停机",
     "休眠",
@@ -72,41 +73,42 @@ char *TempCTRL_Status_Mes[] = {
     "维持",
 };
 
-// 系统信息
+//系统信息
 uint64_t ChipMAC;
 char ChipMAC_S[19] = {0};
 char CompileTime[20];
 
 /////////////////////////////////////////////////////////////////
 
-// 先初始化硬件->显示LOGO->初始化软件
+//先初始化硬件->显示LOGO->初始化软件
 void setup()
 {
-    // 关闭中断
+    //关闭中断
     noInterrupts();
 
     ////////////////////////////初始化硬件/////////////////////////////
-    // 获取系统信息
+    //获取系统信息
     ChipMAC = ESP.getEfuseMac();
     sprintf(CompileTime, "%s %s", __DATE__, __TIME__);
     for (uint8_t i = 0; i < 6; i++)
-        sprintf(ChipMAC_S + i * 3, "%02X%s", ((uint8_t *)&ChipMAC)[i], (i != 5) ? ":" : "");
+        sprintf(ChipMAC_S + i * 3, "%02X%s", ((uint8_t*) &ChipMAC)[i], (i != 5) ? ":" : "");
 
-    // 初始化串口
+    //初始化串口
     Serial.begin(115200);
 
-    // 初始化GPIO
-    BeepInit(); // 蜂鸣器
+    //初始化GPIO
+    BeepInit();                     //蜂鸣器
 
-    pinMode(POWER_ADC_PIN, INPUT); // 主电压分压检测ADC
+    pinMode(POWER_ADC_PIN, INPUT);  //主电压分压检测ADC
 
-    // 初始化烙铁头
+
+    //初始化烙铁头
     TipControlInit();
 
-    // 初始化编码器
+    //初始化编码器
     sys_RotaryInit();
 
-    // 初始化OLED
+    //初始化OLED
     Disp.begin();
     Disp.setBusClock(921600);
     Disp.enableUTF8Print();
@@ -117,59 +119,61 @@ void setup()
     Disp.setFontMode(1);
 
     ////////////////////////////初始化软件/////////////////////////////
-    // 显示启动信息
-    // ShowBootMsg();
+    //显示启动信息
+    //ShowBootMsg();
 
-    // 启动文件系统，并读取存档
+    //启动文件系统，并读取存档
     FilesSystemInit();
 
-    // 初始化命令解析器
+    //初始化命令解析器
     shellInit();
 
-    // 初始化蓝牙（可选）
+    //初始化蓝牙（可选）
     BLE_Init();
 
-    SetSound(BootSound); // 播放音效
+    SetSound(BootSound); //播放音效
 
-    // 初始化UI
+    //初始化UI
     System_UI_Init();
 
-    // 首次启动的时候根据启动温度配置，重新设定目标温度
+    //首次启动的时候根据启动温度配置，重新设定目标温度
     sys_Counter_SetVal(BootTemp);
 
-    // 载入烙铁头配置
+    //载入烙铁头配置
     LoadTipConfig();
 
-    // 显示Logo
-    //    EnterLogo();
+    //显示Logo
+//    EnterLogo();
 
-    // 开机密码
+    //开机密码
     while (!EnterPasswd())
     {
         Pop_Windows("身份验证失败");
     }
     SYS_Ready = true;
+
 }
 
 void loop()
 {
-    // 获取按键
+    //获取按键
     sys_KeyProcess();
 
     if (!Menu_System_State)
     {
-        // 温度闭环控制
+        //温度闭环控制
         TemperatureControlLoop();
-        // 更新系统事件：：系统事件可能会改变功率输出
+        //更新系统事件：：系统事件可能会改变功率输出
         TimerEventLoop();
     }
 
-    // 更新状态码
+
+    //更新状态码
     SYS_StateCode_Update();
-    // 设置输出功率
+    //设置输出功率
     SetPOWER(PID_Output);
 
-    // 刷新UI
+    //刷新UI
     System_UI();
 }
 /**
@@ -179,9 +183,9 @@ void loop()
  */
 double Get_MainPowerVoltage(void)
 {
-    // uint16_t POWER_ADC = analogRead(POWER_ADC_PIN);
+    //uint16_t POWER_ADC = analogRead(POWER_ADC_PIN);
     double TipADC_V_R2 = analogReadMilliVolts(POWER_ADC_PIN) / 1000.0;
-    // double   TipADC_V_R2 = ESP32_ADC2Vol(POWER_ADC);
+    //double   TipADC_V_R2 = ESP32_ADC2Vol(POWER_ADC);
     double TipADC_V_R1 = (TipADC_V_R2 * POWER_ADC_VCC_R1) / POWER_ADC_R2_GND;
 
     SYS_Voltage = TipADC_V_R1 + TipADC_V_R2;
@@ -195,21 +199,21 @@ void SYS_Reboot(void)
 
 void About(void)
 {
-    // 播放Logo动画
+    //播放Logo动画
     EnterLogo();
-    // 生成项目QRCode
+    //生成项目QRCode
     QRCode qrcode;
     uint8_t qrcodeData[qrcode_getBufferSize(3)];
 
     switch (Language)
     {
-    case LANG_Chinese:
-        qrcode_initText(&qrcode, qrcodeData, 3, 0, "https://gitee.com/createskyblue/OpenT12");
-        break;
+        case LANG_Chinese:
+            qrcode_initText(&qrcode, qrcodeData, 3, 0, "https://gitee.com/createskyblue/OpenT12");
+            break;
 
-    default:
-        qrcode_initText(&qrcode, qrcodeData, 3, 0, "https://github.com/createskyblue/OpenT12");
-        break;
+        default:
+            qrcode_initText(&qrcode, qrcodeData, 3, 0, "https://github.com/createskyblue/OpenT12");
+            break;
     }
 
     Clear();
@@ -230,4 +234,5 @@ void About(void)
     {
         Display();
     }
+
 }
